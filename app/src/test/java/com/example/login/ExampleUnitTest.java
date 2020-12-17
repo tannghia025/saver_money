@@ -1,4 +1,4 @@
-package com.example.savermoney;
+package com.example.login;
 
 import org.junit.Test;
 
