@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //anh xa
+
         text_id         = findViewById(R.id.textid);
         text_pass       = findViewById(R.id.textpass);
         button_login    = findViewById(R.id.buttonlogin);

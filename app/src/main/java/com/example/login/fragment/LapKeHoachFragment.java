@@ -1,14 +1,30 @@
 package com.example.login.fragment;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+
+import com.example.login.FirstPage;
 import com.example.login.R;
+import com.example.login.lapkehoach.HoaDonLayout;
+import com.example.login.lapkehoach.NganSachActivity;
+import com.example.login.lapkehoach.SuKienActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +40,7 @@ public class LapKeHoachFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
     private String mParam1;
+    LinearLayout nganSach,suKien,hoaDon;
     private String mParam2;
 
     public LapKeHoachFragment() {
@@ -55,12 +72,55 @@ public class LapKeHoachFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
+    }
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        connect();
+
+        nganSach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.anim_click));
+                Intent intent  = new Intent(getActivity(), NganSachActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        suKien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.anim_click));
+
+                Intent intent  = new Intent(getActivity(), SuKienActivity.class);
+                startActivity(intent);
+            }
+        });
+        hoaDon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.anim_click));
+                Intent intent  = new Intent(getActivity(), HoaDonLayout.class);
+                startActivity(intent);
+            }
+        });
+       }
+//
+    private void connect() {
+        nganSach = getView().findViewById(R.id.nganSach);
+        suKien = getView().findViewById(R.id.suKien);
+        hoaDon = getView().findViewById(R.id.hoaDon);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_lap_ke_hoach, container, false);
     }
+
 }

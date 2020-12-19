@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".lapkehoach.NganSachActivity"></activity>
+        <activity android:name=".lapkehoach.SuKienActivity" />
+        <activity android:name=".lapkehoach.HoaDonLayout" />
         <activity android:name=".FirstPage" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".MainActivity">
