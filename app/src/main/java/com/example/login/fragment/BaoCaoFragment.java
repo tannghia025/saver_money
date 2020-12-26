@@ -25,7 +25,7 @@ public class BaoCaoFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+//alo test merge and pull
     public BaoCaoFragment() {
         // Required empty public constructor
     }
